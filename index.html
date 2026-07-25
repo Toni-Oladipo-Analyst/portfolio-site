@@ -94,5 +94,22 @@
     <p class="copyright">© 2026 Oladipo Oluwatoni. All rights reserved.</p>
   </footer>
 
+  <script>
+    document.querySelectorAll(".project-card.featured").forEach((card) => {
+      card.addEventListener("click", (e) => {
+        if (!window.matchMedia("(hover: none)").matches) return;
+        if (e.target.closest("a")) return;
+        card.classList.toggle("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!e.target.closest(".project-card.featured")) {
+        document
+          .querySelectorAll(".project-card.featured.active")
+          .forEach((c) => c.classList.remove("active"));
+      }
+    });
+  </script>
 </body>
 </html>

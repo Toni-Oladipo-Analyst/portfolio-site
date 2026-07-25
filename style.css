@@ -208,6 +208,19 @@ h1, h2, h3, h4 {
   background: linear-gradient(180deg, rgba(15, 17, 21, 0.05) 0%, rgba(15, 17, 21, 0.55) 55%, rgba(15, 17, 21, 0.92) 100%);
 }
 
+.project-card.featured h3,
+.project-card.featured .card-overlay p {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card.featured:hover h3,
+.project-card.featured:hover .card-overlay p,
+.project-card.featured.active h3,
+.project-card.featured.active .card-overlay p {
+  opacity: 1;
+}
+
 .project-card.featured h3 {
   color: #ffffff;
   font-size: 1.4rem;
