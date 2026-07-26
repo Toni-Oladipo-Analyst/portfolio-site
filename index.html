@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oladipo Oluwatoni | Portfolio</title>
+  <title>Oladipo Oluwatoni | Data Analyst Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -11,8 +14,9 @@
   <!-- ===== NAV ===== -->
   <header class="navbar">
     <div class="nav-inner">
-      <a href="#header" class="logo">Oladipo Oluwatoni</a>
+      <a href="#header" class="logo">Oladipo<span class="logo-dot">.</span></a>
       <nav>
+        <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -21,78 +25,188 @@
 
   <!-- ===== HERO ===== -->
   <section id="header" class="hero">
-    <div class="hero-content">
+    <div class="hero-bg"></div>
+    <div class="hero-content reveal">
       <img src="images/headshot.jpeg" alt="Oladipo Oluwatoni" class="headshot" />
+      <p class="greeting">Hello, I'm</p>
       <h1>Oladipo Oluwatoni</h1>
-      <p class="subtitle">Portfolio</p>
+      <p class="subtitle">
+        <span class="typing-text"></span><span class="cursor">|</span>
+      </p>
       <p class="tagline">
-        Data Analyst well versed in SQL
+        Turning raw data into clear, actionable insights with SQL, Excel &amp; Power BI
       </p>
       <div class="hero-buttons">
-        <a href="#projects" class="btn">View Projects</a>
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="about">
+    <div class="section-inner">
+      <h2 class="section-title reveal">
+        <span class="title-label">About Me</span>
+      </h2>
+      <div class="about-content">
+        <div class="about-text reveal">
+          <p>I'm a data analyst passionate about uncovering the stories hidden in data. I specialize in writing efficient SQL queries, building insightful Power BI dashboards, and using Excel to clean and analyze complex datasets.</p>
+          <p>My recent project involved a deep dive into ecommerce customer analytics &mdash; segmenting customers, tracking purchasing behavior, measuring churn rates, and identifying revenue trends, all from raw data to a polished executive dashboard.</p>
+          <p>I'm actively building my portfolio and always looking for new data challenges. If you have a project, internship, or opportunity in mind, I'd love to connect.</p>
+        </div>
+        <div class="about-skills reveal">
+          <h3>Tools &amp; Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Microsoft Excel</span>
+            <span class="skill-tag">Power BI</span>
+            <span class="skill-tag">Data Cleaning</span>
+            <span class="skill-tag">Data Visualization</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">Dashboard Design</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== PROJECTS ===== -->
   <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
+    <div class="section-inner">
+      <h2 class="section-title reveal">
+        <span class="title-label">Projects</span>
+      </h2>
 
-      <article class="project-card featured" style="background-image: url('images/powerbi-dashboard.png');">
-        <div class="card-overlay">
-          <h3>Ecommerce Customer Analytics</h3>
-          <p>Analyzed ecommerce customer data in SQL to uncover purchasing patterns and behavior, then built this Power BI dashboard on top of it to visualize revenue, churn, and retention performance.</p>
-          <div class="card-links">
-            <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/tree/main" target="_blank" class="btn-outline">View SQL</a>
-            <a href="images/powerbi-dashboard.png" target="_blank" class="btn-outline">View Dashboard</a>
+      <div class="project-grid">
+        <article class="project-card reveal" style="background-image: url('images/powerbi-dashboard.png');">
+          <div class="card-badge">SQL + Power BI</div>
+          <div class="card-overlay">
+            <h3>Ecommerce Customer Analytics</h3>
+            <p>Analyzed ecommerce customer data in SQL to uncover purchasing patterns, churn rates, and revenue trends, then built an executive Power BI dashboard to visualize the results.</p>
+            <div class="card-links">
+              <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/tree/main" target="_blank" class="btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></svg>
+                View SQL
+              </a>
+              <a href="images/powerbi-dashboard.png" target="_blank" class="btn-outline">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M7 17 17 7" /><path d="M7 7h10v10" /></svg>
+                View Dashboard
+              </a>
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
+      <p class="more-coming reveal">More projects coming soon &mdash; stay tuned.</p>
     </div>
   </section>
 
   <!-- ===== CONTACT / FOOTER ===== -->
   <footer id="contact" class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>WhatsApp</h4>
-        <p>
-          <a href="https://wa.me/2349035879214" target="_blank" class="social-icon-link">
-            <svg class="social-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="16" cy="16" r="16" fill="#25D366" />
-              <path fill="#ffffff" d="M16 6.5c-5.25 0-9.5 4.25-9.5 9.5 0 1.68.44 3.26 1.2 4.63L6.5 25.5l5.06-1.16A9.46 9.46 0 0 0 16 25.5c5.25 0 9.5-4.25 9.5-9.5S21.25 6.5 16 6.5zm0 17.2c-1.5 0-2.9-.4-4.1-1.1l-.29-.17-3 .69.7-2.92-.19-.3A7.7 7.7 0 0 1 8.3 16c0-4.25 3.46-7.7 7.7-7.7s7.7 3.45 7.7 7.7-3.45 7.7-7.7 7.7zm4.24-5.77c-.23-.12-1.37-.68-1.58-.75-.21-.08-.37-.12-.52.11-.15.23-.6.75-.74.9-.14.15-.27.17-.5.06-.23-.12-.98-.36-1.87-1.15-.69-.62-1.16-1.38-1.3-1.61-.13-.23-.01-.36.11-.47.11-.11.23-.27.35-.4.12-.14.15-.23.23-.39.08-.15.04-.29-.02-.4-.06-.12-.52-1.26-.72-1.72-.19-.46-.38-.4-.52-.4h-.44c-.15 0-.4.06-.6.29-.21.23-.8.78-.8 1.9s.82 2.2 .94 2.36c.11.15 1.63 2.5 3.96 3.5.55.24.99.38 1.32.48.56.18 1.06.15 1.46.09.45-.07 1.37-.56 1.56-1.1.19-.55.19-1.02.14-1.11-.06-.1-.21-.16-.44-.27z" />
-            </svg>
+    <div class="section-inner">
+      <h2 class="section-title reveal">
+        <span class="title-label">Get In Touch</span>
+      </h2>
+      <p class="footer-intro reveal">Have a question, project idea, or just want to connect? Feel free to reach out through any of these channels.</p>
+
+      <div class="contact-cards reveal">
+        <a href="mailto:oladipotoni@gmail.com" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="#EA4335" />
+            <path fill="#ffffff" d="M8 11.5l8 5.5 8-5.5V10H8v1.5zM24 13l-8 5.5L8 13v9h16v-9z" />
+          </svg>
+          <div>
+            <h4>Email</h4>
+            <span>oladipotoni@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/2349035879214" target="_blank" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="#25D366" />
+            <path fill="#ffffff" d="M16 6.5c-5.25 0-9.5 4.25-9.5 9.5 0 1.68.44 3.26 1.2 4.63L6.5 25.5l5.06-1.16A9.46 9.46 0 0 0 16 25.5c5.25 0 9.5-4.25 9.5-9.5S21.25 6.5 16 6.5zm0 17.2c-1.5 0-2.9-.4-4.1-1.1l-.29-.17-3 .69.7-2.92-.19-.3A7.7 7.7 0 0 1 8.3 16c0-4.25 3.46-7.7 7.7-7.7s7.7 3.45 7.7 7.7-3.45 7.7-7.7 7.7zm4.24-5.77c-.23-.12-1.37-.68-1.58-.75-.21-.08-.37-.12-.52.11-.15.23-.6.75-.74.9-.14.15-.27.17-.5.06-.23-.12-.98-.36-1.87-1.15-.69-.62-1.16-1.38-1.3-1.61-.13-.23-.01-.36.11-.47.11-.11.23-.27.35-.4.12-.14.15-.23.23-.39.08-.15.04-.29-.02-.4-.06-.12-.52-1.26-.72-1.72-.19-.46-.38-.4-.52-.4h-.44c-.15 0-.4.06-.6.29-.21.23-.8.78-.8 1.9s.82 2.2 .94 2.36c.11.15 1.63 2.5 3.96 3.5.55.24.99.38 1.32.48.56.18 1.06.15 1.46.09.45-.07 1.37-.56 1.56-1.1.19-.55.19-1.02.14-1.11-.06-.1-.21-.16-.44-.27z" />
+          </svg>
+          <div>
+            <h4>WhatsApp</h4>
             <span>0903 587 9214</span>
-          </a>
-        </p>
-      </div>
-      <div>
-        <h4>Instagram</h4>
-        <p>
-          <a href="https://instagram.com/tonioladipo" target="_blank" class="social-icon-link">
-            <svg class="social-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#feda75" />
-                  <stop offset="35%" stop-color="#d62976" />
-                  <stop offset="70%" stop-color="#962fbf" />
-                  <stop offset="100%" stop-color="#4f5bd5" />
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" width="32" height="32" rx="9" fill="url(#igGrad)" />
-              <rect x="8" y="8" width="16" height="16" rx="5" fill="none" stroke="#ffffff" stroke-width="1.8" />
-              <circle cx="16" cy="16" r="4.2" fill="none" stroke="#ffffff" stroke-width="1.8" />
-              <circle cx="21.7" cy="10.3" r="1.1" fill="#ffffff" />
-            </svg>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/tonioladipo" target="_blank" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#feda75" />
+                <stop offset="35%" stop-color="#d62976" />
+                <stop offset="70%" stop-color="#962fbf" />
+                <stop offset="100%" stop-color="#4f5bd5" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="32" height="32" rx="9" fill="url(#igGrad)" />
+            <rect x="8" y="8" width="16" height="16" rx="5" fill="none" stroke="#ffffff" stroke-width="1.8" />
+            <circle cx="16" cy="16" r="4.2" fill="none" stroke="#ffffff" stroke-width="1.8" />
+            <circle cx="21.7" cy="10.3" r="1.1" fill="#ffffff" />
+          </svg>
+          <div>
+            <h4>Instagram</h4>
             <span>@tonioladipo</span>
-          </a>
-        </p>
+          </div>
+        </a>
+
+        <a href="https://github.com/Toni-Oladipo-Analyst" target="_blank" class="contact-card">
+          <svg class="contact-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="16" fill="#333" />
+            <path fill="#ffffff" d="M16 6C10.477 6 6 10.477 6 16c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.607.069-.607 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 16 9.785c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C23.138 24.163 26 20.418 26 16c0-5.523-4.477-10-10-10z" />
+          </svg>
+          <div>
+            <h4>GitHub</h4>
+            <span>Toni-Oladipo-Analyst</span>
+          </div>
+        </a>
       </div>
     </div>
-    <p class="copyright">© 2026 Oladipo Oluwatoni. All rights reserved.</p>
+    <p class="copyright">&copy; 2026 Oladipo Oluwatoni. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Typing animation
+    const texts = ["Data Analyst", "SQL Developer", "Dashboard Designer"];
+    let textIndex = 0, charIndex = 0, deleting = false;
+    const el = document.querySelector(".typing-text");
+
+    function type() {
+      const current = texts[textIndex];
+      el.textContent = current.substring(0, charIndex);
+
+      if (!deleting && charIndex < current.length) {
+        charIndex++;
+        setTimeout(type, 80);
+      } else if (!deleting && charIndex === current.length) {
+        setTimeout(() => { deleting = true; type(); }, 2000);
+      } else if (deleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, 40);
+      } else {
+        deleting = false;
+        textIndex = (textIndex + 1) % texts.length;
+        setTimeout(type, 400);
+      }
+    }
+    type();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
 
 </body>
 </html>
