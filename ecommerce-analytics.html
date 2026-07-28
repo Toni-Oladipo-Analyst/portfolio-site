@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecommerce Customer Analytics | Oladipo Oluwatoni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project-page.css" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXNLTXKJHW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXNLTXKJHW');
+  </script>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo">Oladipo<span class="logo-dot">.</span></a>
+      <nav>
+        <a href="index.html#projects">&larr; Back to Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PROJECT HERO -->
+  <section class="project-hero">
+    <div class="project-hero-inner">
+      <div class="project-hero-badges">
+        <span class="badge">SQL</span>
+        <span class="badge">MySQL</span>
+        <span class="badge">Power BI</span>
+        <span class="badge">Excel</span>
+      </div>
+      <h1>Ecommerce Customer Analytics &amp; Business Intelligence</h1>
+      <p class="project-hero-sub">End-to-end data analytics project covering data cleaning, MySQL database design, advanced SQL analysis, and a live Power BI executive dashboard.</p>
+      <div class="project-hero-stats">
+        <div class="stat">
+          <span class="stat-value">1,200</span>
+          <span class="stat-label">Customers</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">$6.36M</span>
+          <span class="stat-label">Total Revenue</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">64.1%</span>
+          <span class="stat-label">Churn Rate</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">10</span>
+          <span class="stat-label">Project Phases</span>
+        </div>
+      </div>
+      <div class="project-hero-links">
+        <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/tree/main" target="_blank" class="btn btn-primary">View on GitHub</a>
+        <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/raw/main/Ecommerce_Analytics_Presentation.pptx" target="_blank" class="btn btn-ghost">Download Slides</a>
+        <a href="images/powerbi-dashboard.png" target="_blank" class="btn btn-ghost">View Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="project-content">
+
+    <!-- THE PROBLEM -->
+    <section class="content-section">
+      <h2><span class="section-num">01</span> The Problem</h2>
+      <p>An ecommerce business had 1,200 customers worth of raw, uncleaned transactional and behavioral data sitting in CSV files with 25 fields covering demographics, purchasing history, engagement metrics, and satisfaction scores.</p>
+      <p>Management needed answers to critical questions: <strong>Who are our most valuable customers? Why are customers leaving? Which regions and segments drive the most profit? Where should we invest to grow?</strong></p>
+      <p>There was no analytics infrastructure in place &mdash; no database, no dashboards, no reporting. Everything had to be built from scratch.</p>
+    </section>
+
+    <!-- THE PROCESS -->
+    <section class="content-section">
+      <h2><span class="section-num">02</span> My Process</h2>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 1</span>
+          <h3>Data Cleaning &amp; Preparation (Excel)</h3>
+        </div>
+        <p>Started with the raw CSV export containing inconsistencies, duplicates, and missing values across 25 columns. Cleaned and standardized everything in Excel before importing into MySQL &mdash; fixed formatting issues, handled null values, removed duplicate records, and ensured consistent data types.</p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 2</span>
+          <h3>Database Design &amp; Implementation (MySQL)</h3>
+        </div>
+        <p>Designed a normalized relational schema with two core tables linked by a foreign key with cascading updates and deletes. Added constraints for data integrity (satisfaction scores between 1-5, churn as binary flag).</p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>SQL &mdash; Schema Design</span>
+          </div>
+<pre><code>CREATE TABLE customers (
+    customer_id              INT PRIMARY KEY,
+    age                      TINYINT NOT NULL,
+    gender                   VARCHAR(20) NOT NULL,
+    country                  VARCHAR(50) NOT NULL,
+    region                   VARCHAR(50) NOT NULL,
+    income_bracket           VARCHAR(20),
+    loyalty_tier             VARCHAR(20),
+    referral_source          VARCHAR(30)
+    -- ... 14 columns total
+);
+
+CREATE TABLE customer_activity (
+    customer_id               INT PRIMARY KEY,
+    total_spent_usd           DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    total_orders              INT NOT NULL DEFAULT 0,
+    days_since_last_purchase  INT NOT NULL,
+    satisfaction_score        TINYINT,
+    churn                     TINYINT(1) NOT NULL DEFAULT 0,
+
+    CONSTRAINT fk_customer
+        FOREIGN KEY (customer_id)
+        REFERENCES customers(customer_id)
+        ON DELETE CASCADE ON UPDATE CASCADE,
+
+    CONSTRAINT chk_satisfaction
+        CHECK (satisfaction_score BETWEEN 1 AND 5)
+);</code></pre>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 3</span>
+          <h3>Customer &amp; Revenue Analysis</h3>
+        </div>
+        <p>Wrote queries to break down revenue by geography, loyalty tier, payment method, device type, and referral source. Identified which segments drive the most value and where the business is underperforming.</p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>SQL &mdash; Revenue by Geography</span>
+          </div>
+<pre><code>SELECT c.region, c.country,
+       COUNT(*) AS customer_count,
+       SUM(a.total_spent_usd) AS total_revenue,
+       ROUND(AVG(a.total_spent_usd), 2) AS avg_spend_per_customer,
+       ROUND(SUM(a.total_spent_usd) * 100.0
+           / (SELECT SUM(total_spent_usd) FROM customer_activity), 2)
+           AS pct_of_total_revenue
+FROM customers c
+JOIN customer_activity a ON c.customer_id = a.customer_id
+GROUP BY c.region, c.country
+ORDER BY total_revenue DESC;</code></pre>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 4</span>
+          <h3>Customer Retention &amp; Churn Analysis</h3>
+        </div>
+        <p>Defined churn as no purchase in 365+ days and validated this rule against the dataset's own churn flag (0 disagreements). Segmented customers into risk buckets by recency, then cross-referenced with loyalty tier and satisfaction scores to identify who to target for retention campaigns.</p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>SQL &mdash; Churn Risk Segmentation</span>
+          </div>
+<pre><code>SELECT
+  CASE
+    WHEN a.days_since_last_purchase &lt;= 90  THEN '0-90 days (Active)'
+    WHEN a.days_since_last_purchase &lt;= 180 THEN '91-180 days (Watch)'
+    WHEN a.days_since_last_purchase &lt;= 365 THEN '181-365 days (At Risk)'
+    ELSE '365+ days (Churned)'
+  END AS recency_bucket,
+  COUNT(*) AS customer_count,
+  ROUND(AVG(a.total_spent_usd), 2) AS avg_spend
+FROM customer_activity a
+GROUP BY recency_bucket
+ORDER BY MIN(a.days_since_last_purchase);
+
+-- Retention targets: at-risk, low satisfaction, high spend
+SELECT c.customer_id, c.country, c.loyalty_tier,
+       a.total_spent_usd, a.satisfaction_score
+FROM customers c
+JOIN customer_activity a ON c.customer_id = a.customer_id
+WHERE a.days_since_last_purchase BETWEEN 91 AND 365
+  AND a.satisfaction_score &lt;= 3
+ORDER BY a.total_spent_usd DESC
+LIMIT 20;</code></pre>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 5</span>
+          <h3>Advanced Analytics &mdash; Window Functions</h3>
+        </div>
+        <p>Used RANK, PERCENT_RANK, and cumulative SUM window functions to identify revenue concentration (top 10% of customers = 50.6% of revenue), rank customers within each region, and find local market leaders by country.</p>
+        <div class="code-block">
+          <div class="code-header">
+            <span>SQL &mdash; Revenue Concentration Analysis</span>
+          </div>
+<pre><code>SELECT customer_id,
+       total_spent_usd,
+       RANK() OVER (ORDER BY total_spent_usd DESC) AS revenue_rank,
+       ROUND(total_spent_usd * 100.0
+           / SUM(total_spent_usd) OVER (), 3)
+           AS pct_of_total_revenue
+FROM customer_activity
+ORDER BY revenue_rank
+LIMIT 20;
+
+-- Top 3 customers within each region
+SELECT * FROM (
+    SELECT c.region, c.customer_id, a.total_spent_usd,
+           RANK() OVER (PARTITION BY c.region
+                        ORDER BY a.total_spent_usd DESC)
+               AS rank_in_region
+    FROM customers c
+    JOIN customer_activity a ON c.customer_id = a.customer_id
+) ranked
+WHERE rank_in_region &lt;= 3
+ORDER BY region, rank_in_region;</code></pre>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 6</span>
+          <h3>Reporting Views</h3>
+        </div>
+        <p>Created 6 reusable SQL views to serve as data sources for the Power BI dashboard, so the analysis refreshes automatically without rewriting queries:</p>
+        <ul class="view-list">
+          <li><strong>vw_customer_churn_risk</strong> &mdash; Segments every customer into Active, Watch, At Risk, or Churned</li>
+          <li><strong>vw_revenue_by_geography</strong> &mdash; Revenue, customer count, and % contribution by region and country</li>
+          <li><strong>vw_loyalty_performance</strong> &mdash; Spend, orders, satisfaction, and churn rate by loyalty tier</li>
+          <li><strong>vw_customer_segments</strong> &mdash; Full customer profile with derived age bands, spend segments, and lifecycle stages</li>
+          <li><strong>vw_executive_kpis</strong> &mdash; Single-row summary of all key metrics for the dashboard header</li>
+          <li><strong>vw_signup_cohorts</strong> &mdash; Monthly cohort analysis tracking revenue and churn over time</li>
+        </ul>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 7</span>
+          <h3>Stored Procedures</h3>
+        </div>
+        <p>Built 3 parameterized stored procedures for on-demand filtered reporting &mdash; by country, spend threshold, and loyalty tier &mdash; so stakeholders can pull specific reports without writing SQL.</p>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <span class="phase-tag">Phase 8-10</span>
+          <h3>Power BI Dashboard &amp; Live Refresh</h3>
+        </div>
+        <p>Connected Power BI directly to the 6 MySQL views as live data sources. Built an executive dashboard with KPI cards (Churn Rate, Total Revenue, Revenue At Risk, Average Satisfaction, Total Customers), churn trends by loyalty tier, revenue by country, acquisition by referral source, spend segment mix, and interactive slicers for Region, Loyalty Tier, and Spend Segment.</p>
+        <div class="dashboard-preview">
+          <img src="images/powerbi-dashboard.png" alt="Power BI Executive Dashboard" />
+        </div>
+        <p>Demonstrated live data refresh by inserting, updating, and deleting a test customer (ID 1201) through SQL, with the dashboard reflecting changes in real time via the underlying views.</p>
+      </div>
+    </section>
+
+    <!-- KEY FINDINGS -->
+    <section class="content-section">
+      <h2><span class="section-num">03</span> Key Findings</h2>
+      <div class="findings-grid">
+        <div class="finding-card">
+          <span class="finding-stat">64.1%</span>
+          <p>of customers churned (no purchase in 365+ days) &mdash; a critical retention crisis requiring immediate intervention.</p>
+        </div>
+        <div class="finding-card">
+          <span class="finding-stat">50.6%</span>
+          <p>of total revenue comes from just the top 10% of customers &mdash; high dependency on a small group creates significant risk.</p>
+        </div>
+        <div class="finding-card">
+          <span class="finding-stat">$2.05M</span>
+          <p>in revenue sits with at-risk customers (91-365 days inactive) who are still recoverable with targeted outreach.</p>
+        </div>
+        <div class="finding-card">
+          <span class="finding-stat">80x</span>
+          <p>more spent by Platinum tier vs Bronze on average &mdash; the loyalty program is working but most customers never graduate past Bronze.</p>
+        </div>
+        <div class="finding-card">
+          <span class="finding-stat">4 Markets</span>
+          <p>Spain, Australia, Brazil, and Mexico show the strongest expansion potential based on revenue per customer vs market penetration.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILES & RESOURCES -->
+    <section class="content-section">
+      <h2><span class="section-num">04</span> Project Files</h2>
+      <div class="file-list">
+        <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/blob/main/ecommerce_analytics_full_project.sql" target="_blank" class="file-item">
+          <div class="file-icon">SQL</div>
+          <div>
+            <strong>ecommerce_analytics_full_project.sql</strong>
+            <p>Complete SQL script &mdash; schema, analysis, views, procedures</p>
+          </div>
+        </a>
+        <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/raw/main/Ecommerce_Analytics_Presentation.pptx" target="_blank" class="file-item">
+          <div class="file-icon">PPTX</div>
+          <div>
+            <strong>Ecommerce_Analytics_Presentation.pptx</strong>
+            <p>Project presentation slides</p>
+          </div>
+        </a>
+        <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/raw/main/SQL%20Project%20.docx" target="_blank" class="file-item">
+          <div class="file-icon">DOCX</div>
+          <div>
+            <strong>SQL Project.docx</strong>
+            <p>Project requirements document</p>
+          </div>
+        </a>
+        <a href="https://github.com/Toni-Oladipo-Analyst/SQL-PROJECT/blob/main/ecommerce_customer_analytics.csv" target="_blank" class="file-item">
+          <div class="file-icon">CSV</div>
+          <div>
+            <strong>ecommerce_customer_analytics.csv</strong>
+            <p>Raw uncleaned dataset (1,200 records)</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="project-footer">
+    <a href="index.html#projects" class="btn btn-ghost">&larr; Back to All Projects</a>
+    <p class="copyright">&copy; 2026 Oladipo Oluwatoni. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("revealed");
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".content-section, .phase, .finding-card, .file-item").forEach((el) => {
+      el.classList.add("reveal");
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

@@ -551,6 +551,26 @@ h1, h2, h3, h4 {
   background: var(--accent);
 }
 
+/* CLICKABLE PROJECT CARD LINK */
+a.project-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-cta {
+  display: inline-block;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+a.project-card:hover .card-cta {
+  transform: translateX(6px);
+}
+
 .more-coming {
   text-align: center;
   color: var(--text-muted);
