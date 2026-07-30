@@ -358,6 +358,38 @@ h1, h2, h3, h4 {
   box-shadow: 0 4px 12px rgba(79, 209, 197, 0.15);
 }
 
+/* QUOTE */
+.quote-section {
+  padding: 4rem 0;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.data-quote {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.data-quote p {
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  font-style: italic;
+}
+
+.data-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+}
+
 /* PROJECTS */
 .projects {
   padding: 6rem 0;
