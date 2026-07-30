@@ -80,49 +80,59 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
+  <!-- ===== SELECTED WORK ===== -->
   <section id="projects" class="projects">
     <div class="section-inner">
-      <h2 class="section-title reveal">
-        <span class="title-label">Projects</span>
-      </h2>
+      <p class="section-eyebrow reveal">SELECTED WORK</p>
+      <h2 class="projects-heading reveal">A collection of projects built from raw data to actionable insights.</h2>
 
-      <div class="project-grid">
+      <div class="work-grid">
 
         <!-- PROJECT 1: Ecommerce Customer Analytics -->
-        <a href="ecommerce-analytics.html" class="project-card reveal" style="background-image: url('images/powerbi-dashboard.png');">
-          <div class="card-badge">SQL + Power BI</div>
-          <div class="card-overlay">
-            <h3>Ecommerce Customer Analytics</h3>
-            <p>End-to-end analytics project: cleaned raw data, designed a MySQL database, wrote advanced SQL queries, and built a live Power BI executive dashboard.</p>
-            <span class="card-cta">View Case Study &rarr;</span>
+        <a href="ecommerce-analytics.html" class="work-card reveal">
+          <div class="work-card-top">
+            <span class="work-role">DATA ANALYST</span>
+            <svg class="work-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg>
+          </div>
+          <h3 class="work-title">Ecommerce Customer Analytics</h3>
+          <p class="work-desc">Designed a MySQL database from scratch, wrote 15+ advanced SQL queries to segment customers, measure churn, and uncover revenue trends &mdash; then delivered an executive dashboard.</p>
+          <div class="work-tags">
+            <span class="work-tag">SQL</span>
+            <span class="work-tag">MySQL</span>
+            <span class="work-tag">Power BI</span>
+            <span class="work-tag">Data Cleaning</span>
+            <span class="work-tag">Stored Procedures</span>
           </div>
         </a>
 
         <!-- PROJECT 2: Zuri Electronics -->
-        <article class="project-card-video reveal">
-          <div class="card-badge">Power BI</div>
-          <div class="dashboard-embed">
-            <iframe title="Zuri Electronics Sales Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiYTdkZTE0NWEtMWQ1Ni00Njc1LWI2YmQtMWRkMjFhN2I5OGI3IiwidCI6ImM5NmIxMTU3LTMyYTUtNDgzMC1iZTRiLTJlMDEzZDk4NmQzOCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTdkZTE0NWEtMWQ1Ni00Njc1LWI2YmQtMWRkMjFhN2I5OGI3IiwidCI6ImM5NmIxMTU3LTMyYTUtNDgzMC1iZTRiLTJlMDEzZDk4NmQzOCJ9" target="_blank" class="work-card reveal">
+          <div class="work-card-top">
+            <span class="work-role">BI DEVELOPER</span>
+            <svg class="work-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></svg>
           </div>
-          <div class="card-info">
-            <h3>Zuri Electronics Sales Dashboard</h3>
-            <p>Cleaned three raw data exports in Power Query, modeled a star schema with 12+ DAX measures, and delivered an interactive executive dashboard tracking $4.3M in revenue.</p>
-            <h4 class="insight-heading">Key Insights</h4>
-            <ul class="insight-list">
-              <li>Corporate segment is underperforming at 27% of revenue ($1.17M) &mdash; a $500K gap behind Consumer that signals untapped B2B potential.</li>
-              <li>A recurring June-August revenue dip (~25% decline) presents a clear opportunity for seasonal promotions.</li>
-              <li>Technology products yield 2-3x the profit of Furniture, yet the West region underindexes on Tech sales.</li>
-            </ul>
-            <div class="card-links">
-              <a href="https://app.powerbi.com/view?r=eyJrIjoiYTdkZTE0NWEtMWQ1Ni00Njc1LWI2YmQtMWRkMjFhN2I5OGI3IiwidCI6ImM5NmIxMTU3LTMyYTUtNDgzMC1iZTRiLTJlMDEzZDk4NmQzOCJ9" target="_blank" class="btn-outline">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
-                Open Full Dashboard
-              </a>
-            </div>
+          <h3 class="work-title">Zuri Electronics Sales Dashboard</h3>
+          <p class="work-desc">Cleaned three raw data exports in Power Query, modeled a star schema with 12+ DAX measures, and delivered an interactive executive dashboard tracking $4.3M in revenue across 4 regions.</p>
+          <div class="work-tags">
+            <span class="work-tag">Power BI</span>
+            <span class="work-tag">DAX</span>
+            <span class="work-tag">Power Query</span>
+            <span class="work-tag">Star Schema</span>
+            <span class="work-tag">Data Modeling</span>
           </div>
-        </article>
+        </a>
 
+      </div>
+
+      <!-- LIVE DASHBOARD PREVIEW -->
+      <div class="live-dashboard reveal">
+        <div class="live-dashboard-header">
+          <div class="live-dot"></div>
+          <span>Live Dashboard &mdash; Zuri Electronics</span>
+        </div>
+        <div class="live-dashboard-frame">
+          <iframe title="Zuri Electronics Sales Dashboard" src="https://app.powerbi.com/view?r=eyJrIjoiYTdkZTE0NWEtMWQ1Ni00Njc1LWI2YmQtMWRkMjFhN2I5OGI3IiwidCI6ImM5NmIxMTU3LTMyYTUtNDgzMC1iZTRiLTJlMDEzZDk4NmQzOCJ9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
       </div>
 
       <p class="more-coming reveal">More projects coming soon &mdash; stay tuned.</p>
