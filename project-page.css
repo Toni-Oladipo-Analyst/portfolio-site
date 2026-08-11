@@ -233,6 +233,28 @@
   font-size: 0.85rem;
 }
 
+/* DASHBOARD EMBED */
+.dashboard-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgba(79, 209, 197, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin: 1.5rem 0;
+  background: #1a1e28;
+}
+
+.dashboard-embed iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* DASHBOARD PREVIEW */
 .dashboard-preview {
   margin: 1.5rem 0;
